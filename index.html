@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATTACK ON TITAN: BEYOND THE WALLS | Survey Corps Official Prototype</title>
+  
+  <!-- Cinematic Anime Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cinzel+Decorative:wght@700;900&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;600;700&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="aot-body">
+
+  <!-- ============================================================
+       BLADE ARSENAL & MOUSE CURSOR STANCE SYSTEM (Pure CSS Radios)
+       ============================================================ -->
+  <input type="radio" name="blade-stance" id="stance-standard" class="blade-stance-radio" checked aria-label="Standard Scout Blade Stance">
+  <input type="radio" name="blade-stance" id="stance-levi" class="blade-stance-radio" aria-label="Levi Spiral Dual Blades Stance">
+  <input type="radio" name="blade-stance" id="stance-crystal" class="blade-stance-radio" aria-label="Titan Hardening Crystal Blade Stance">
+  <input type="radio" name="blade-stance" id="stance-thunder" class="blade-stance-radio" aria-label="Thunder Spear Warhead Stance">
+
+  <!-- Floating Blade Stance Weapon Selector HUD -->
+  <aside class="blade-arsenal-dock" aria-label="Blade Stance Weapon Selector">
+    <div class="arsenal-label">
+      <span class="arsenal-label-icon">⚔️</span>
+      <span>BLADE ARSENAL</span>
+    </div>
+    <div class="arsenal-options">
+      <label for="stance-standard" class="stance-btn btn-stance-std" title="Standard Scout Ultrahard Snap-Off Blade">
+        🗡️ STANDARD
+      </label>
+      <label for="stance-levi" class="stance-btn btn-stance-levi" title="Levi Ackerman Dual Spiral Whirlwind Blades">
+        🌀 LEVI VORTEX
+      </label>
+      <label for="stance-crystal" class="stance-btn btn-stance-crys" title="Titan-Hardened Diamond Azure Blade">
+        💎 CRYSTAL
+      </label>
+      <label for="stance-thunder" class="stance-btn btn-stance-thun" title="Thunder Spear Explosive Warhead Tip">
+        🚀 THUNDER SPEAR
+      </label>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       TOP MILITARY CLASSIFICATION TICKER
+       ============================================================ -->
+  <aside class="military-ticker" aria-label="Tactical Status Ticker">
+    <div class="ticker-content">
+      <span class="ticker-item"><span class="badge-red">RESTRICTED</span> SURVEY CORPS 57TH EXPEDITIONARY UNIT</span>
+      <span class="ticker-separator">//</span>
+      <span class="ticker-item">WALL MARIA OUTER GATE: <strong>BREACH RISK CRITICAL</strong></span>
+      <span class="ticker-separator">//</span>
+      <span class="ticker-item">DEFCON 1 ACTIVE — PREPARE ODM GEAR REELS</span>
+      <span class="ticker-separator">//</span>
+      <span class="ticker-item">NEW RECRUIT RECRUITMENT TERMINAL OPEN — ENLIST TODAY</span>
+      <span class="ticker-separator">//</span>
+      <span class="ticker-item">心臓を捧げよ — DEVOTE YOUR HEARTS!</span>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       STICKY NAVIGATION BAR (Pure CSS Navigation & Smooth Scroll)
+       ============================================================ -->
+  <header class="tactical-navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Survey Corps Crest / Logo -->
+      <a href="#hero" class="brand-logo" aria-label="Attack on Titan Home">
+        <div class="wings-crest-icon">
+          <!-- Wings of Freedom SVG Crest -->
+          <svg viewBox="0 0 100 120" class="crest-svg" aria-hidden="true">
+            <polygon points="50,5 92,20 92,75 50,115 8,75 8,20" class="shield-border" />
+            <polygon points="50,11 86,24 86,72 50,107 14,72 14,24" class="shield-bg" />
+            <path d="M50,22 Q38,28 26,40 Q22,55 30,68 Q38,62 44,52 Q40,66 48,78 Q42,85 50,92 Q48,78 50,65 Z" class="wing-white" />
+            <path d="M50,22 Q62,28 74,40 Q78,55 70,68 Q62,62 56,52 Q60,66 52,78 Q58,85 50,92 Q52,78 50,65 Z" class="wing-blue" />
+            <line x1="28" y1="28" x2="72" y2="88" class="sword-accent" />
+            <line x1="72" y1="28" x2="28" y2="88" class="sword-accent" />
+          </svg>
+        </div>
+        <div class="brand-meta">
+          <span class="brand-sub">SURVEY CORPS // 調査兵団</span>
+          <span class="brand-main">BEYOND THE WALLS</span>
+        </div>
+      </a>
+
+      <!-- Mobile Checkbox Toggle (Pure CSS Mobile Menu) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-toggle-btn" aria-hidden="true">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </label>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#hero" class="nav-link"><span class="nav-num">01</span> WALL MARIA</a>
+        <a href="#mission" class="nav-link"><span class="nav-num">02</span> MISSION</a>
+        <a href="#characters" class="nav-link"><span class="nav-num">03</span> CHARACTERS</a>
+        <a href="#battle" class="nav-link nav-link-alert"><span class="nav-num">04</span> TITAN COMBAT</a>
+        <a href="#creator" class="nav-link nav-link-creator"><span class="nav-num">05</span> RECRUIT CREATOR</a>
+        <a href="#intel" class="nav-link"><span class="nav-num">06</span> INTEL & GEAR</a>
+        <a href="#creator" class="nav-cta-btn">ENLIST RECRUIT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO / LANDING SECTION (Animated Skyline, Wall, Mist, Smoke)
+       ============================================================ -->
+  <section id="hero" class="hero-section">
+    <!-- Parallax Visual Backdrop -->
+    <div class="hero-backdrop" aria-hidden="true">
+      <div class="sky-gradient"></div>
+      <div class="blood-moon"></div>
+      
+      <!-- Continuous Drifting Clouds (CSS Animation 1) -->
+      <div class="clouds-layer clouds-layer-back"></div>
+      <div class="clouds-layer clouds-layer-front"></div>
+      
+      <!-- Distant Colossal Titan Silhouette peering through mist (CSS Animation 4) -->
+      <div class="distant-titan-silhouette">
+        <div class="titan-head"></div>
+        <div class="titan-shoulders"></div>
+        <div class="titan-steam-bursts">
+          <span class="steam-puff puff-1"></span>
+          <span class="steam-puff puff-2"></span>
+          <span class="steam-puff puff-3"></span>
+        </div>
+        <div class="titan-eyes-glow"></div>
+      </div>
+      
+      <!-- Massive Wall Maria Structure (CSS Animation 5) -->
+      <div class="wall-maria-structure">
+        <div class="wall-skyline-crenellations"></div>
+        <div class="wall-surface-texture"></div>
+        <div class="wall-watchtower tower-left"><div class="torch-brazier"></div></div>
+        <div class="wall-watchtower tower-center">
+          <div class="torch-brazier"></div>
+          <div class="scout-wall-guard"><div class="scout-cape-flutter"></div></div>
+        </div>
+        <div class="wall-watchtower tower-right"><div class="torch-brazier"></div></div>
+        <div class="wall-light-sweep"></div>
+      </div>
+
+      <!-- Continuous Rolling Fog Layers (CSS Animation 2) -->
+      <div class="fog-layer fog-layer-deep"></div>
+      <div class="fog-layer fog-layer-mid"></div>
+      <div class="fog-layer fog-layer-near"></div>
+
+      <!-- Animated Rising Smoke & Ground Steam (CSS Animation 3) -->
+      <div class="smoke-field">
+        <div class="smoke-plume plume-1"></div>
+        <div class="smoke-plume plume-2"></div>
+        <div class="smoke-plume plume-3"></div>
+        <div class="smoke-plume plume-4"></div>
+      </div>
+
+      <!-- Ambient Floating Embers -->
+      <div class="embers-container">
+        <span class="ember"></span><span class="ember"></span><span class="ember"></span><span class="ember"></span>
+        <span class="ember"></span><span class="ember"></span><span class="ember"></span><span class="ember"></span>
+      </div>
+    </div>
+
+    <!-- Hero Content (Cinematic Entrance - CSS Animation 6) -->
+    <div class="hero-content-wrapper">
+      <div class="hero-container">
+        <div class="hero-seal-badge entrance-element delay-1">
+          <span class="seal-kanji">進撃の巨人</span>
+          <span class="seal-divider">|</span>
+          <span class="seal-regiment">調査兵団本部公認 // SCOUT REGIMENT COMMAND</span>
+        </div>
+
+        <h1 class="hero-main-title entrance-element delay-2">
+          <span class="title-primary">ATTACK ON TITAN</span>
+          <span class="title-secondary">BEYOND THE WALLS</span>
+        </h1>
+
+        <blockquote class="hero-quote entrance-element delay-3">
+          <span class="quote-symbol">“</span>Humanity's future lies beyond the walls.<span class="quote-symbol">”</span>
+        </blockquote>
+
+        <p class="hero-lead-text entrance-element delay-4">
+          Join the Survey Corps. Venture beyond the walls. Discover what awaits humanity.
+        </p>
+
+        <!-- Staggered Action Buttons -->
+        <div class="hero-actions-group entrance-element delay-5">
+          <a href="#mission" class="btn btn-primary">
+            <span class="btn-bracket">[</span>
+            <span class="btn-text">START EXPEDITION</span>
+            <span class="btn-bracket">]</span>
+            <span class="btn-flare"></span>
+          </a>
+
+          <a href="#characters" class="btn btn-secondary">
+            <span class="btn-bracket">[</span>
+            <span class="btn-text">CHARACTERS</span>
+            <span class="btn-bracket">]</span>
+            <span class="btn-flare"></span>
+          </a>
+
+          <a href="#battle" class="btn btn-crimson">
+            <span class="btn-bracket">[</span>
+            <span class="btn-text">TITAN COMBAT ARENA</span>
+            <span class="btn-bracket">]</span>
+            <span class="btn-flare"></span>
+          </a>
+
+          <a href="#creator" class="btn btn-gold">
+            <span class="btn-bracket">[</span>
+            <span class="btn-text">CREATE RECRUIT</span>
+            <span class="btn-bracket">]</span>
+            <span class="btn-flare"></span>
+          </a>
+        </div>
+
+        <!-- Military Telemetry HUD Bar -->
+        <div class="hero-telemetry-hud entrance-element delay-6">
+          <div class="telemetry-cell">
+            <span class="telemetry-label">WALL STATUS</span>
+            <span class="telemetry-val val-green">50M INTACT</span>
+          </div>
+          <div class="telemetry-cell">
+            <span class="telemetry-label">TARGET RADIUS</span>
+            <span class="telemetry-val">SECTOR 04 (+15 KM)</span>
+          </div>
+          <div class="telemetry-cell">
+            <span class="telemetry-label">SURVIVAL RATE</span>
+            <span class="telemetry-val val-crimson">42.8% ESTIMATED</span>
+          </div>
+          <div class="telemetry-cell">
+            <span class="telemetry-label">FORMATION</span>
+            <span class="telemetry-val val-gold">DELTA-WING ACTIVE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#mission" class="scroll-cue" aria-label="Scroll to Mission">
+      <span class="scroll-cue-text">EXPEDITION BRIEFING</span>
+      <div class="scroll-cue-line"></div>
+    </a>
+  </section>
+
+  <!-- ============================================================
+       MISSION SECTION (Briefing Dossier, Radar, Interactive Flares)
+       ============================================================ -->
+  <section id="mission" class="mission-section">
+    <div class="section-container">
+      <div class="section-title-wrap">
+        <div class="section-kanji-tag">任務指令 // OPERATION ZERO</div>
+        <h2 class="section-heading">MISSION 01 — BEYOND THE WALL</h2>
+        <div class="section-gold-line"></div>
+      </div>
+
+      <div class="mission-briefing-banner">
+        <div class="briefing-commander-avatar">
+          <img src="images/erwin.jpg" alt="Commander Erwin Smith Official Anime Photo" class="commander-img" loading="lazy">
+          <span class="commander-tag">COMMANDER</span>
+        </div>
+        <div class="briefing-content-wrap">
+          <div class="briefing-stamp">PRIORITY 1</div>
+          <p class="briefing-quote">
+            “Titan activity has been detected beyond the walls. The Survey Corps has been ordered to investigate.”
+          </p>
+          <span class="briefing-author">— Commander Erwin Smith, Survey Corps HQ</span>
+        </div>
+      </div>
+
+      <div class="mission-grid">
+        <!-- Dossier Card -->
+        <div class="mission-dossier-card">
+          <div class="card-header-bar">
+            <span class="card-tag">EXPEDITION SPECIFICATION</span>
+            <span class="card-code">DOC-SC-089</span>
+          </div>
+
+          <div class="dossier-body">
+            <div class="dossier-field">
+              <span class="dossier-label">MISSION OBJECTIVE</span>
+              <p class="dossier-val-highlight">
+                Establish Outpost Theta at the perimeter of the <em>Forest of Giant Trees</em> and neutralize all approaching Titans threatening the supply wagon corridor.
+              </p>
+            </div>
+
+            <div class="dossier-stats-grid">
+              <div class="stat-box">
+                <span class="stat-label">DIFFICULTY</span>
+                <span class="stat-value danger-text">S-RANK // EXTREME</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">LOCATION</span>
+                <span class="stat-value">Outer District 04, Shiganshina Frontier</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">SURVIVAL STATUS</span>
+                <span class="stat-value warning-text">42% (Long-Distance Formation Active)</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">WEATHER CONDS</span>
+                <span class="stat-value">Overcast, Dense Ground Mist</span>
+              </div>
+            </div>
+
+            <div class="expedition-tracker">
+              <div class="tracker-header">
+                <span class="tracker-label">EXPEDITION PROGRESS: STAGE 02 / 05</span>
+                <span class="tracker-percent">40% DEPLOYED</span>
+              </div>
+              <div class="progress-bar-track">
+                <div class="progress-bar-fill"></div>
+              </div>
+              <div class="tracker-nodes">
+                <span class="node active">Wall Gate</span>
+                <span class="node active">Plains Outpost</span>
+                <span class="node current">Giant Tree Forest</span>
+                <span class="node">Ruined Township</span>
+                <span class="node">Basement District</span>
+              </div>
+            </div>
+
+            <!-- Pure CSS Flare Signal System -->
+            <div class="flare-signal-module">
+              <div class="module-title">TACTICAL SIGNAL FLARE PROTOCOL (SELECT TO TRANSMIT)</div>
+              
+              <input type="radio" name="flare" id="flare-green" class="flare-radio" checked>
+              <input type="radio" name="flare" id="flare-red" class="flare-radio">
+              <input type="radio" name="flare" id="flare-black" class="flare-radio">
+              <input type="radio" name="flare" id="flare-smoke" class="flare-radio">
+
+              <div class="flare-selector-tabs">
+                <label for="flare-green" class="flare-tab flare-tab-green">
+                  <span class="flare-orb"></span> 🟢 GREEN FLARE
+                </label>
+                <label for="flare-red" class="flare-tab flare-tab-red">
+                  <span class="flare-orb"></span> 🔴 RED FLARE
+                </label>
+                <label for="flare-black" class="flare-tab flare-tab-black">
+                  <span class="flare-orb"></span> ⚫ BLACK FLARE
+                </label>
+                <label for="flare-smoke" class="flare-tab flare-tab-smoke">
+                  <span class="flare-orb"></span> 💨 SMOKE SCREEN
+                </label>
+              </div>
+
+              <div class="flare-display-box flare-box-green">
+                <strong class="flare-order-title">COURSE ALTERATION DIRECTIVE</strong>
+                <p>Green smoke discharged by Vanguard Command. Entire expedition pivots 30 degrees North to bypass heavy Titan cluster on Southern plains.</p>
+              </div>
+              <div class="flare-display-box flare-box-red">
+                <strong class="flare-order-title">TITAN SIGHTED IN SECTOR</strong>
+                <p>Red smoke discharged by Left Scout Flank! 10-meter standard class spotted 800m ahead. Forward scouts to engage immediately.</p>
+              </div>
+              <div class="flare-display-box flare-box-black">
+                <strong class="flare-order-title">ABNORMAL TITAN WARNING</strong>
+                <p>Black smoke discharged! High-velocity Abnormal exhibiting erratic sprinting behavior. Do not engage alone — lead into tree trap canopy!</p>
+              </div>
+              <div class="flare-display-box flare-box-smoke">
+                <strong class="flare-order-title">TACTICAL EVASION SCREEN</strong>
+                <p>Continuous acoustic and colored smoke canisters launched to blind Titan vision. All squads fall back to canopy heights.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Radar Card -->
+        <div class="mission-map-card">
+          <div class="card-header-bar">
+            <span class="card-tag">TOPOGRAPHIC RADAR INTERFACE</span>
+            <span class="card-code">GRID-SHIG-04</span>
+          </div>
+
+          <div class="radar-container">
+            <div class="radar-grid-lines"></div>
+            <div class="radar-ring ring-1"></div>
+            <div class="radar-ring ring-2"></div>
+            <div class="radar-ring ring-3"></div>
+            <div class="radar-sweep-beam"></div>
+
+            <div class="map-wall-boundary">
+              <span class="wall-name-tag">WALL MARIA PERIMETER (CLOSED)</span>
+            </div>
+
+            <div class="map-zone zone-forest"><span class="zone-label">FOREST OF GIANT TREES</span></div>
+            <div class="map-zone zone-ruins"><span class="zone-label">OLD RUINS // SECTOR 4</span></div>
+
+            <svg class="map-route-svg" viewBox="0 0 400 350" preserveAspectRatio="none">
+              <path d="M 50,300 C 120,270 160,220 220,180 S 300,120 340,70" class="scout-route-path" />
+              <circle cx="220" cy="180" r="7" class="scout-position-dot" />
+              <circle cx="220" cy="180" r="14" class="scout-position-pulse" />
+            </svg>
+
+            <div class="threat-node node-alpha">
+              <span class="threat-ping"></span>
+              <span class="threat-label">TITAN 15M (ABNORMAL)</span>
+            </div>
+            <div class="threat-node node-beta">
+              <span class="threat-ping"></span>
+              <span class="threat-label">TITAN 7M</span>
+            </div>
+            <div class="threat-node node-gamma">
+              <span class="threat-ping"></span>
+              <span class="threat-label">TITAN 12M</span>
+            </div>
+
+            <div class="map-hud-compass">
+              <span class="compass-n">N</span>
+              <div class="compass-arrow"></div>
+            </div>
+            <div class="map-coordinates">
+              LAT: 47°18'22"N // LNG: 12°04'55"E<br>
+              DISTANCE TRAVELED: 14.2 KM
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CHARACTER SHOWCASE SECTION (5 Cards)
+       ============================================================ -->
+  <section id="characters" class="characters-section">
+    <div class="section-container">
+      <div class="section-title-wrap">
+        <div class="section-kanji-tag">調査兵団・精鋭隊員 // COMBAT ROSTER</div>
+        <h2 class="section-heading">SURVEY CORPS ELITE ROSTER</h2>
+        <div class="section-gold-line"></div>
+        <p class="section-subtitle">
+          Master soldiers possessing unshakeable resolve to venture into the jaws of the Titans for humanity’s salvation.
+        </p>
+      </div>
+
+      <div class="characters-grid">
+        <!-- CARD 1: EREN YEAGER -->
+        <article class="char-card" tabindex="0">
+          <div class="card-inner">
+            <div class="char-header">
+              <span class="char-regiment">SPECIAL OPERATIONS</span>
+              <span class="char-kanji">エレン・イェーガー</span>
+            </div>
+            <div class="char-photo-frame">
+              <img src="images/eren.jpg" alt="Eren Yeager Official Anime Photo" class="char-photo-img" loading="lazy">
+              <div class="photo-overlay-gradient"></div>
+              <div class="avatar-glow"></div>
+              <div class="char-tag-flag">ATTACK TITAN</div>
+            </div>
+            <div class="char-meta">
+              <h3 class="char-name">EREN YEAGER</h3>
+              <span class="char-role">Vanguard Shock Trooper // Coordinate Bearer</span>
+              <p class="char-desc">Fuelled by sheer ferocity and unyielding conviction. Holds the power of the Attack Titan, standing as humanity's living spearhead against extinction.</p>
+            </div>
+            <div class="char-stats">
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">STRENGTH</span><span class="gauge-num">95%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-eren-str"></div></div>
+              </div>
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">AGILITY</span><span class="gauge-num">85%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-eren-agi"></div></div>
+              </div>
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">STRATEGY</span><span class="gauge-num">78%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-eren-strat"></div></div>
+              </div>
+            </div>
+            <div class="char-hover-reveal">
+              <div class="reveal-divider"></div>
+              <blockquote class="reveal-quote">“If you win, you live. If you lose, you die. If you don't fight, you can't win!”</blockquote>
+              <div class="reveal-loadout">
+                <span class="loadout-pill">Dual Blades</span><span class="loadout-pill">Titan Shifter</span><span class="loadout-pill">Thunder Spears</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2: MIKASA ACKERMAN -->
+        <article class="char-card" tabindex="0">
+          <div class="card-inner">
+            <div class="char-header">
+              <span class="char-regiment">SPECIAL OPERATIONS</span>
+              <span class="char-kanji">ミカサ・アッカーマン</span>
+            </div>
+            <div class="char-photo-frame">
+              <img src="images/mikasa.jpg" alt="Mikasa Ackerman Official Anime Photo" class="char-photo-img" loading="lazy">
+              <div class="photo-overlay-gradient"></div>
+              <div class="avatar-glow"></div>
+              <div class="char-tag-flag">COMBAT ACE</div>
+            </div>
+            <div class="char-meta">
+              <h3 class="char-name">MIKASA ACKERMAN</h3>
+              <span class="char-role">Combat Prodigy // Frontline Guardian</span>
+              <p class="char-desc">Possesses generational combat instincts valued at a hundred ordinary soldiers. A lethal tempest with dual ultrahard steel blades, unmatched in agility and focus.</p>
+            </div>
+            <div class="char-stats">
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">STRENGTH</span><span class="gauge-num">98%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-mikasa-str"></div></div>
+              </div>
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">AGILITY</span><span class="gauge-num">99%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-mikasa-agi"></div></div>
+              </div>
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">STRATEGY</span><span class="gauge-num">84%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-mikasa-strat"></div></div>
+              </div>
+            </div>
+            <div class="char-hover-reveal">
+              <div class="reveal-divider"></div>
+              <blockquote class="reveal-quote">“This world is cruel, but it is also very beautiful.”</blockquote>
+              <div class="reveal-loadout">
+                <span class="loadout-pill">Ackerman Instinct</span><span class="loadout-pill">Dual Blades</span><span class="loadout-pill">Red Scarf</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 3: ARMIN ARLERT -->
+        <article class="char-card" tabindex="0">
+          <div class="card-inner">
+            <div class="char-header">
+              <span class="char-regiment">TACTICAL COMMAND</span>
+              <span class="char-kanji">アルミン・アルレルト</span>
+            </div>
+            <div class="char-photo-frame">
+              <img src="images/armin.jpg" alt="Armin Arlert Official Anime Photo" class="char-photo-img" loading="lazy">
+              <div class="photo-overlay-gradient"></div>
+              <div class="avatar-glow"></div>
+              <div class="char-tag-flag">CHIEF STRATEGIST</div>
+            </div>
+            <div class="char-meta">
+              <h3 class="char-name">ARMIN ARLERT</h3>
+              <span class="char-role">Survey Corps Tactical Mind // Colossal Inheritor</span>
+              <p class="char-desc">A genius of analytical deduction whose battle tactics consistently invert insurmountable disaster into historic victory through sheer insight.</p>
+            </div>
+            <div class="char-stats">
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">STRENGTH</span><span class="gauge-num">55%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-armin-str"></div></div>
+              </div>
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">AGILITY</span><span class="gauge-num">68%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-armin-agi"></div></div>
+              </div>
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">STRATEGY</span><span class="gauge-num">100%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-armin-strat"></div></div>
+              </div>
+            </div>
+            <div class="char-hover-reveal">
+              <div class="reveal-divider"></div>
+              <blockquote class="reveal-quote">“To surpass monsters, one must be willing to abandon their humanity.”</blockquote>
+              <div class="reveal-loadout">
+                <span class="loadout-pill">Topography Map</span><span class="loadout-pill">Signal Flares</span><span class="loadout-pill">Colossal Titan</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 4: LEVI ACKERMAN -->
+        <article class="char-card" tabindex="0">
+          <div class="card-inner">
+            <div class="char-header">
+              <span class="char-regiment">SPECIAL OPERATIONS CAPTAIN</span>
+              <span class="char-kanji">リヴァイ・アッカーマン</span>
+            </div>
+            <div class="char-photo-frame">
+              <img src="images/levi.jpg" alt="Levi Ackerman Official Anime Photo" class="char-photo-img" loading="lazy">
+              <div class="photo-overlay-gradient"></div>
+              <div class="avatar-glow"></div>
+              <div class="char-tag-flag gold-flag">HUMANITY'S STRONGEST</div>
+            </div>
+            <div class="char-meta">
+              <h3 class="char-name">LEVI ACKERMAN</h3>
+              <span class="char-role">Captain // Humanity's Strongest Soldier</span>
+              <p class="char-desc">An indomitable whirlwind in three-dimensional combat. Capable of decimating entire Titan packs in seconds with his lethal reverse-grip dual blade technique.</p>
+            </div>
+            <div class="char-stats">
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">STRENGTH</span><span class="gauge-num">100%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-levi-str"></div></div>
+              </div>
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">AGILITY</span><span class="gauge-num">100%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-levi-agi"></div></div>
+              </div>
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">STRATEGY</span><span class="gauge-num">92%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-levi-strat"></div></div>
+              </div>
+            </div>
+            <div class="char-hover-reveal">
+              <div class="reveal-divider"></div>
+              <blockquote class="reveal-quote">“Make the choice you'll regret the least.”</blockquote>
+              <div class="reveal-loadout">
+                <span class="loadout-pill">Reverse Blade Spin</span><span class="loadout-pill">Cravat</span><span class="loadout-pill">Ultra-Pressure ODM</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 5: HANGE ZOE -->
+        <article class="char-card" tabindex="0">
+          <div class="card-inner">
+            <div class="char-header">
+              <span class="char-regiment">TITAN RESEARCH CHIEF</span>
+              <span class="char-kanji">ハンジ・ゾエ</span>
+            </div>
+            <div class="char-photo-frame">
+              <img src="images/hange.jpg" alt="Hange Zoe Official Anime Photo" class="char-photo-img" loading="lazy">
+              <div class="photo-overlay-gradient"></div>
+              <div class="avatar-glow"></div>
+              <div class="char-tag-flag">4TH SQUAD LEADER</div>
+            </div>
+            <div class="char-meta">
+              <h3 class="char-name">HANGE ZOE</h3>
+              <span class="char-role">Section Commander // Chief Titan Scientist</span>
+              <p class="char-desc">An eccentric visionary scientist driven by insatiable curiosity to dissect Titan biology. Lethally adept with ODM gear and inventor of ingenious Titan capture weapons.</p>
+            </div>
+            <div class="char-stats">
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">STRENGTH</span><span class="gauge-num">80%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-hange-str"></div></div>
+              </div>
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">AGILITY</span><span class="gauge-num">90%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-hange-agi"></div></div>
+              </div>
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">STRATEGY</span><span class="gauge-num">98%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-hange-strat"></div></div>
+              </div>
+            </div>
+            <div class="char-hover-reveal">
+              <div class="reveal-divider"></div>
+              <blockquote class="reveal-quote">“If there is something we don't know, we should learn it. That's the duty of the Survey Corps!”</blockquote>
+              <div class="reveal-loadout">
+                <span class="loadout-pill">Target Goggles</span><span class="loadout-pill">Harpoon Trap</span><span class="loadout-pill">Research Journal</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 6: ELENA VANCE (Original Character) -->
+        <article class="char-card" tabindex="0">
+          <div class="card-inner">
+            <div class="char-header">
+              <span class="char-regiment">ENGINEERING VANGUARD</span>
+              <span class="char-kanji">エレナ・ヴァンス</span>
+            </div>
+            <div class="char-photo-frame">
+              <img src="images/elena.jpg" alt="Elena Vance Original Scout Anime Photo" class="char-photo-img" loading="lazy">
+              <div class="photo-overlay-gradient"></div>
+              <div class="avatar-glow"></div>
+              <div class="char-tag-flag">ODM GEAR INNOVATOR</div>
+            </div>
+            <div class="char-meta">
+              <h3 class="char-name">ELENA VANCE</h3>
+              <span class="char-role">Scout Vanguard Pioneer // Ballistics Specialist</span>
+              <p class="char-desc">Visionary combat engineer from the subterranean district. Redesigned the high-velocity cable winch and acoustic decoy flares for perilous deep-canopy scouting.</p>
+            </div>
+            <div class="char-stats">
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">STRENGTH</span><span class="gauge-num">84%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-oc-str"></div></div>
+              </div>
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">AGILITY</span><span class="gauge-num">94%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-oc-agi"></div></div>
+              </div>
+              <div class="stat-gauge-row">
+                <div class="gauge-meta"><span class="gauge-label">STRATEGY</span><span class="gauge-num">90%</span></div>
+                <div class="gauge-track"><div class="gauge-fill fill-oc-strat"></div></div>
+              </div>
+            </div>
+            <div class="char-hover-reveal">
+              <div class="reveal-divider"></div>
+              <blockquote class="reveal-quote">“The walls were never our sanctuary; they were our prison. Every step past them takes us closer to freedom.”</blockquote>
+              <div class="reveal-loadout">
+                <span class="loadout-pill">Quad-Canister Gas</span><span class="loadout-pill">Acoustic Flares</span><span class="loadout-pill">Twin Blades</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TITAN COMBAT ARENA (MULTI-MOVE FIGHTING ANIMATIONS)
+       ============================================================ -->
+  <section id="battle" class="battle-section">
+    <div class="section-container">
+      
+      <div class="section-title-wrap">
+        <div class="section-kanji-tag kanji-alert">交戦警報 // CODE CRIMSON</div>
+        <h2 class="section-heading">TITAN ENCOUNTER AT DISTRICT 04</h2>
+        <div class="section-crimson-line"></div>
+        <p class="section-subtitle">
+          15-meter Abnormal class intercepted in District 04! Select your combat maneuver to execute anime attack animations against the Titan!
+        </p>
+      </div>
+
+      <!-- Combat Arena Container Wrapping Radio Inputs for Pure CSS Multi-Move Switching -->
+      <div class="combat-arena-wrapper">
+        
+        <!-- PURE CSS COMBAT MOVE RADIO CONTROLLERS -->
+        <input type="radio" name="combat-move" id="move-reset" class="move-radio" checked>
+        <input type="radio" name="combat-move" id="move-slash" class="move-radio">
+        <input type="radio" name="combat-move" id="move-spin" class="move-radio">
+        <input type="radio" name="combat-move" id="move-spear" class="move-radio">
+        <input type="radio" name="combat-move" id="move-shifter" class="move-radio">
+
+        <!-- Combat Move Selection Control Bar -->
+        <div class="combat-moves-hud">
+          <label for="move-reset" class="move-btn btn-reset">
+            <span class="move-icon">🔄</span>
+            <div class="move-meta">
+              <span class="move-title">PATROL STANCE</span>
+              <span class="move-sub">STANDBY / RESET</span>
+            </div>
+          </label>
+
+          <label for="move-slash" class="move-btn btn-slash">
+            <span class="move-icon">⚔</span>
+            <div class="move-meta">
+              <span class="move-title">DUAL NAPE SLASH</span>
+              <span class="move-sub">うなじ切断 // HIGH SPEED</span>
+            </div>
+          </label>
+
+          <label for="move-spin" class="move-btn btn-spin">
+            <span class="move-icon">🌀</span>
+            <div class="move-meta">
+              <span class="move-title">LEVI SPIRAL VORTEX</span>
+              <span class="move-sub">螺旋回転斬り // 720° SPIN</span>
+            </div>
+          </label>
+
+          <label for="move-spear" class="move-btn btn-spear">
+            <span class="move-icon">🚀</span>
+            <div class="move-meta">
+              <span class="move-title">THUNDER SPEAR</span>
+              <span class="move-sub">雷槍爆砕 // HIGH EXPLOSIVE</span>
+            </div>
+          </label>
+
+          <label for="move-shifter" class="move-btn btn-shifter">
+            <span class="move-icon">⚡</span>
+            <div class="move-meta">
+              <span class="move-title">SHIFTER STRIKE</span>
+              <span class="move-sub">巨人化突撃 // TITAN FIST</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- The Cinematic Battlefield Stage (Screen Shake + Parallax Environment) -->
+        <div class="battle-stage-frame">
+          <div class="battle-camera-viewport">
+            
+            <!-- Sky & Weather -->
+            <div class="battle-sky"><div class="battle-lightning-flash"></div></div>
+            <div class="battle-wall-silhouette"></div>
+
+            <!-- Medieval District Buildings -->
+            <div class="battle-rooftops-layer">
+              <div class="building building-1"><div class="roof-gable"></div><div class="chimney"></div></div>
+              <div class="building building-2"><div class="roof-gable"></div></div>
+              <div class="building building-3"><div class="roof-gable"></div><div class="chimney"></div></div>
+            </div>
+
+            <!-- Fog & Ground Smoke -->
+            <div class="battle-fog-drift"></div>
+            <div class="battle-ground-smoke">
+              <div class="smoke-puff-field sp-1"></div>
+              <div class="smoke-puff-field sp-2"></div>
+              <div class="smoke-puff-field sp-3"></div>
+            </div>
+
+            <!-- Anime Speed Lines -->
+            <div class="speedlines-radial"></div>
+
+            <!-- ============================================
+                 15M TITAN ENTITY
+                 ============================================ -->
+            <div class="battle-titan-entity">
+              <div class="nape-steam-column">
+                <span class="nape-vapor nv-1"></span>
+                <span class="nape-vapor nv-2"></span>
+                <span class="nape-vapor nv-3"></span>
+              </div>
+
+              <!-- Stylized Titan Silhouette Vector -->
+              <svg viewBox="0 0 300 450" class="titan-body-svg" aria-label="15-Meter Titan Silhouette">
+                <path d="M 90,160 Q 60,200 70,290 Q 90,320 150,320 Q 210,320 230,290 Q 240,200 210,160 Z" class="titan-torso" />
+                <path d="M 40,160 Q 90,120 150,120 Q 210,120 260,160 Q 230,190 200,180 Q 150,170 100,180 Q 70,190 40,160 Z" class="titan-shoulders-svg" />
+                <path d="M 120,120 L 120,80 Q 110,40 150,30 Q 190,40 180,80 L 180,120 Z" class="titan-head-svg" />
+                <path d="M 130,75 Q 150,90 170,75 Q 150,82 130,75 Z" class="titan-jaw" />
+                <path d="M 45,160 Q 30,230 40,320 Q 48,340 55,330 Q 65,240 75,185 Z" class="titan-arm-left" />
+                <path d="M 255,160 Q 275,230 265,320 Q 255,340 248,330 Q 235,240 225,185 Z" class="titan-arm-right" />
+                <rect x="138" y="90" width="24" height="20" rx="3" class="nape-weakpoint" />
+              </svg>
+
+              <!-- Glowing Eyes -->
+              <div class="titan-eyes-container">
+                <span class="titan-eye-glow eye-left"></span>
+                <span class="titan-eye-glow eye-right"></span>
+              </div>
+
+              <!-- Footstep Shockwave -->
+              <div class="footstep-shockwave"></div>
+            </div>
+
+            <!-- ============================================
+                 SURVEY CORPS SOLDIER & ODM GEAR
+                 ============================================ -->
+            <div class="battle-soldier-entity">
+              <div class="cable cable-left"></div>
+              <div class="cable cable-right"></div>
+
+              <div class="odm-gas-exhaust">
+                <span class="gas-cloud gc-1"></span>
+                <span class="gas-cloud gc-2"></span>
+                <span class="gas-cloud gc-3"></span>
+              </div>
+
+              <div class="soldier-body">
+                <div class="soldier-cape">
+                  <div class="cape-tail tail-1"></div>
+                  <div class="cape-tail tail-2"></div>
+                  <div class="cape-tail tail-3"></div>
+                </div>
+
+                <svg viewBox="0 0 100 100" class="soldier-svg" aria-label="Survey Corps Scout Soldier">
+                  <circle cx="50" cy="30" r="10" class="soldier-head-svg" />
+                  <path d="M 40,26 Q 48,16 62,24 Q 56,36 46,36 Z" class="soldier-hair-svg" />
+                  <path d="M 42,38 L 62,42 L 58,68 L 38,64 Z" class="soldier-torso-svg" />
+                  <rect x="36" y="52" width="12" height="6" rx="2" class="odm-pack-svg" />
+                  <rect x="54" y="54" width="12" height="6" rx="2" class="odm-pack-svg" />
+                  <line x1="60" y1="40" x2="90" y2="20" class="blade-line line-right" />
+                  <line x1="38" y1="42" x2="10" y2="25" class="blade-line line-left" />
+                </svg>
+              </div>
+
+              <!-- SWORD SLASH EFFECT -->
+              <div class="sword-slash-container">
+                <div class="slash-arc arc-primary"></div>
+                <div class="slash-arc arc-secondary"></div>
+                <div class="spark-cluster">
+                  <span class="spark sp-a"></span><span class="spark sp-b"></span>
+                  <span class="spark sp-c"></span><span class="spark sp-d"></span><span class="spark sp-e"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ============================================
+                 FIGHTING MOVE ANIMATION LAYERS
+                 ============================================ -->
+            
+            <!-- MOVE 2: LEVI SPIRAL WHIRLWIND VORTEX -->
+            <div class="spiral-vortex-layer">
+              <div class="spiral-blade-disc disc-1"></div>
+              <div class="spiral-blade-disc disc-2"></div>
+              <div class="spiral-blade-disc disc-3"></div>
+              <div class="spiral-spark-ring"></div>
+            </div>
+
+            <!-- MOVE 3: THUNDER SPEAR ROCKETS & DETONATION -->
+            <div class="thunder-spear-layer">
+              <div class="spear-missile missile-1">
+                <div class="missile-head"></div>
+                <div class="missile-trail"></div>
+              </div>
+              <div class="spear-missile missile-2">
+                <div class="missile-head"></div>
+                <div class="missile-trail"></div>
+              </div>
+              <div class="thunder-explosion-fireball"></div>
+              <div class="explosion-shockwave-ring ring-a"></div>
+              <div class="explosion-shockwave-ring ring-b"></div>
+            </div>
+
+            <!-- MOVE 4: ATTACK TITAN SHIFTER FIST & LIGHTNING -->
+            <div class="shifter-strike-layer">
+              <div class="titan-lightning-burst">
+                <span class="bolt bolt-1"></span>
+                <span class="bolt bolt-2"></span>
+                <span class="bolt bolt-3"></span>
+              </div>
+              <div class="shifter-fist-entity">
+                <div class="fist-glow"></div>
+                <svg viewBox="0 0 160 160" class="fist-svg">
+                  <!-- Hardened Titan Fist Vector -->
+                  <circle cx="80" cy="80" r="45" class="fist-knuckles" />
+                  <rect x="50" y="70" width="60" height="50" rx="10" class="fist-base" />
+                  <path d="M40,55 Q80,40 120,55 L115,85 L45,85 Z" class="fist-fingers" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Full-Screen Impact Flash -->
+            <div class="battle-impact-flash"></div>
+
+            <!-- Combat Victory Banners -->
+            <div class="combat-action-banner banner-slash">
+              <span class="action-kanji">完全討伐</span>
+              <span class="action-en">NAPE SEVERED // DUAL BLADE STRIKE</span>
+            </div>
+
+            <div class="combat-action-banner banner-spin">
+              <span class="action-kanji">螺旋連撃</span>
+              <span class="action-en">LEVI VORTEX // 720° ROTATION CRITICAL</span>
+            </div>
+
+            <div class="combat-action-banner banner-spear">
+              <span class="action-kanji">雷槍爆碎</span>
+              <span class="action-en">THUNDER SPEAR DETONATION // ARMOR SHATTERED</span>
+            </div>
+
+            <div class="combat-action-banner banner-shifter">
+              <span class="action-kanji">進撃咆哮</span>
+              <span class="action-en">ATTACK TITAN HARDENED FIST // TITAN PULVERIZED</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Combat Arena Info Legend -->
+        <div class="battle-legend-grid">
+          <div class="legend-item">
+            <span class="legend-icon green-glow"></span>
+            <div class="legend-text">
+              <strong>Dual Blade Strike</strong>
+              <span>Targeting the 1m × 10cm nape coordinate with maximum acceleration.</span>
+            </div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-icon red-glow"></span>
+            <div class="legend-text">
+              <strong>Thunder Spear Artillery</strong>
+              <span>Armor-piercing rocket propelled charge developed for Armored Titans.</span>
+            </div>
+          </div>
+          <div class="legend-item">
+            <span class="legend-icon gold-glow"></span>
+            <div class="legend-text">
+              <strong>Titan Shifter Roar</strong>
+              <span>Bio-electrical lightning manifestation of Attack Titan coordinate power.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             TITAN NAPE PRECISION SLICING DOJO (Interactive Mouse Practice)
+             ============================================================ -->
+        <div class="blade-dojo-module">
+          <!-- Top Tactical HUD -->
+          <div class="dojo-header">
+            <div class="dojo-title-group">
+              <span class="dojo-tag">SURVEY CORPS COMBAT DOJO // 標的精密撃滅演習</span>
+              <h3 class="dojo-title">TITAN NAPE TARGET CUTTING RANGE</h3>
+              <p class="dojo-subtitle">Select an ODM combat maneuver and swipe your mouse across the Titan nape coordinate to practice lethal blade lacerations.</p>
+            </div>
+            <div class="dojo-instruction-box">
+              <div class="dojo-inst-tag">TACTICAL DIRECTIVE</div>
+              <div class="dojo-inst-text">SWIPE MOUSE TO CUT // CLICK TO EXECUTE NAPE SEVERANCE</div>
+            </div>
+          </div>
+
+          <!-- Tactical Mode Tabs (Pure CSS Radios) -->
+          <div class="dojo-mode-selector">
+            <input type="radio" name="dojo-maneuver" id="maneuver-diagonal" class="dojo-radio" checked>
+            <input type="radio" name="dojo-maneuver" id="maneuver-whirlwind" class="dojo-radio">
+            <input type="radio" name="dojo-maneuver" id="maneuver-horizontal" class="dojo-radio">
+            <input type="radio" name="dojo-maneuver" id="maneuver-spear" class="dojo-radio">
+
+            <div class="dojo-tab-nav">
+              <label for="maneuver-diagonal" class="dojo-tab tab-diag">
+                <span class="tab-icon">⚔️</span>
+                <span class="tab-label">01. DIAGONAL LUNGE (45°)</span>
+              </label>
+              <label for="maneuver-whirlwind" class="dojo-tab tab-whirl">
+                <span class="tab-icon">🌀</span>
+                <span class="tab-label">02. LEVI 720° VORTEX</span>
+              </label>
+              <label for="maneuver-horizontal" class="dojo-tab tab-horiz">
+                <span class="tab-icon">🗡️</span>
+                <span class="tab-label">03. HORIZONTAL CLEAVE</span>
+              </label>
+              <label for="maneuver-spear" class="dojo-tab tab-spear">
+                <span class="tab-icon">💥</span>
+                <span class="tab-label">04. THUNDER SPEAR PIERCE</span>
+              </label>
+            </div>
+
+            <!-- The Grand Titan Nape Slicing Stage -->
+            <div class="dojo-arena-stage" tabindex="0">
+              <!-- Titan Muscle Anatomy Layers -->
+              <div class="titan-anatomy-bg">
+                <!-- Spinal Column Vertebrae Guides -->
+                <div class="spine-vertebrae">
+                  <span class="vert-segment vert-c1"></span>
+                  <span class="vert-segment vert-c2"></span>
+                  <span class="vert-segment vert-c3"></span>
+                  <span class="vert-segment vert-c4"></span>
+                  <span class="vert-segment vert-c5"></span>
+                </div>
+
+                <!-- Dual ODM Wire Grapple Anchors -->
+                <div class="grapple-anchor anchor-left">
+                  <div class="anchor-cable cable-vib-left"></div>
+                  <div class="anchor-clamp"></div>
+                  <span class="anchor-label">ODM ANCHOR L [LOCKED]</span>
+                </div>
+                <div class="grapple-anchor anchor-right">
+                  <div class="anchor-cable cable-vib-right"></div>
+                  <div class="anchor-clamp"></div>
+                  <span class="anchor-label">ODM ANCHOR R [LOCKED]</span>
+                </div>
+
+                <!-- Muscle Fiber Striations -->
+                <div class="muscle-striations upper-muscle"></div>
+                <div class="muscle-striations lower-muscle"></div>
+              </div>
+
+              <!-- Central Vulnerable Nape Core (Positioned cleanly with no overlap) -->
+              <div class="nape-critical-box">
+                <div class="reticle-corner reticle-tl"></div>
+                <div class="reticle-corner reticle-tr"></div>
+                <div class="reticle-corner reticle-bl"></div>
+                <div class="reticle-corner reticle-br"></div>
+                <span class="nape-core-header">TARGET COORDINATE</span>
+                <span class="nape-core-dimension">1m × 10cm CRITICAL ZONE</span>
+                <span class="nape-core-kanji">弱点・頸椎中心</span>
+              </div>
+
+              <!-- Interactive Slice Activation Surface -->
+              <div class="nape-slice-overlay">
+                <!-- Slice Beam Elements -->
+                <div class="slice-streak-beam beam-diagonal"></div>
+                <div class="slice-streak-beam beam-whirlwind">
+                  <div class="vortex-disc disc-lg"></div>
+                  <div class="vortex-disc disc-md"></div>
+                  <div class="vortex-disc disc-sm"></div>
+                </div>
+                <div class="slice-streak-beam beam-horizontal"></div>
+                <div class="slice-streak-beam beam-pierce">
+                  <div class="pierce-fireball"></div>
+                </div>
+
+                <!-- Dynamic Flesh Wound Opening -->
+                <div class="nape-flesh-laceration">
+                  <div class="laceration-steam-bursts">
+                    <span class="steam-wisp w-1"></span>
+                    <span class="steam-wisp w-2"></span>
+                    <span class="steam-wisp w-3"></span>
+                  </div>
+                </div>
+
+                <!-- Flying Spark Explosion -->
+                <div class="dojo-sparks-emitter">
+                  <span class="d-spark ds-1"></span><span class="d-spark ds-2"></span>
+                  <span class="d-spark ds-3"></span><span class="d-spark ds-4"></span>
+                  <span class="d-spark ds-5"></span><span class="d-spark ds-6"></span>
+                </div>
+
+                <!-- Kill Strike Impact Stamp (Reveals on Active/Click) -->
+                <div class="nape-elimination-stamp">
+                  <div class="stamp-border-box">
+                    <span class="stamp-kanji">完全討伐</span>
+                    <span class="stamp-sub">CRITICAL NAPE DISSECTION // TITAN NEUTRALIZED</span>
+                    <span class="stamp-stat">DAMAGE: 9,999+ // SEVER DEPTH: 100%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4 Dedicated Quick-Swipe Training Cards (Side by Side below stage, zero collision) -->
+            <div class="dojo-cards-grid">
+              <div class="dojo-card card-diag" tabindex="0">
+                <div class="card-head">
+                  <span class="cut-num">CUT 01</span>
+                  <span class="cut-angle">ANGLE 45°</span>
+                </div>
+                <div class="card-trajectory-preview">
+                  <div class="traj-line traj-diag-line"></div>
+                  <span class="traj-indicator">⚔️ SWIPE HERE</span>
+                </div>
+                <div class="card-meta">
+                  <h4 class="card-cut-title">うなじ一閃 // DIAGONAL LUNGE</h4>
+                  <p class="card-cut-desc">Accelerate at 45° angle to slice diagonally across the nape tendons before Titan reflexes react.</p>
+                </div>
+              </div>
+
+              <div class="dojo-card card-whirl" tabindex="0">
+                <div class="card-head">
+                  <span class="cut-num">CUT 02</span>
+                  <span class="cut-angle">720° VORTEX</span>
+                </div>
+                <div class="card-trajectory-preview">
+                  <div class="traj-line traj-spin-ring"></div>
+                  <span class="traj-indicator">🌀 SWIPE HERE</span>
+                </div>
+                <div class="card-meta">
+                  <h4 class="card-cut-title">螺旋旋風 // REVERSE WHIRLWIND</h4>
+                  <p class="card-cut-desc">Levi Ackerman's signature multi-rotation technique slicing 6 continuous lacerations per pass.</p>
+                </div>
+              </div>
+
+              <div class="dojo-card card-horiz" tabindex="0">
+                <div class="card-head">
+                  <span class="cut-num">CUT 03</span>
+                  <span class="cut-angle">HORIZ 180°</span>
+                </div>
+                <div class="card-trajectory-preview">
+                  <div class="traj-line traj-horiz-line"></div>
+                  <span class="traj-indicator">🗡️ SWIPE HERE</span>
+                </div>
+                <div class="card-meta">
+                  <h4 class="card-cut-title">双刃両断 // HORIZONTAL CLEAVE</h4>
+                  <p class="card-cut-desc">Twin blades deployed in tandem to completely sever the spinal cord in a single devastating stroke.</p>
+                </div>
+              </div>
+
+              <div class="dojo-card card-spear" tabindex="0">
+                <div class="card-head">
+                  <span class="cut-num">CUT 04</span>
+                  <span class="cut-angle">PIERCING</span>
+                </div>
+                <div class="card-trajectory-preview">
+                  <div class="traj-line traj-spear-point"></div>
+                  <span class="traj-indicator">💥 SWIPE HERE</span>
+                </div>
+                <div class="card-meta">
+                  <h4 class="card-cut-title">雷槍爆砕 // THUNDER EXPLOSION</h4>
+                  <p class="card-cut-desc">Direct armor-piercing projectile embedded into the nape core and detonated via lanyard fuse.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Telemetry Footer -->
+          <div class="dojo-telemetry-bar">
+            <div class="dojo-tel-item">
+              <span class="tel-label">BLADE ALLOY:</span>
+              <span class="tel-val-good">ULTRAHARD BAMBOO ORE [100% SHARP]</span>
+            </div>
+            <div class="dojo-tel-item">
+              <span class="tel-label">CUT VELOCITY:</span>
+              <span class="tel-val-gold">142 KM/H ODM FLUID DISCHARGE</span>
+            </div>
+            <div class="dojo-tel-item">
+              <span class="tel-label">TARGET STATUS:</span>
+              <span class="tel-val-danger">NAPE TISSUE VULNERABLE // LETHAL STRIKE READY</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ANIME CHARACTER CREATOR SECTION (Pure CSS Live Dossier)
+       ============================================================ -->
+  <section id="creator" class="creator-section">
+    <div class="section-container">
+      
+      <div class="section-title-wrap">
+        <div class="section-kanji-tag">新兵入隊・隊員作成ターミナル // RECRUIT LAB</div>
+        <h2 class="section-heading">CREATE YOUR ANIME SCOUT CHARACTER</h2>
+        <div class="section-gold-line"></div>
+        <p class="section-subtitle">
+          Customize your original soldier, choose your military branch, configure combat traits, and enlist into humanity’s counteroffensive!
+        </p>
+      </div>
+
+      <!-- Creator Grid Container (Wrapping Radio Inputs for Live Pure CSS Preview Reactivity) -->
+      <div class="creator-container">
+        
+        <!-- PURE CSS RECRUIT CUSTOMIZATION CONTROLLERS (RADIOS) -->
+        <!-- Regiment Branch -->
+        <input type="radio" name="rec-branch" id="branch-scout" class="c-radio branch-radio" checked>
+        <input type="radio" name="rec-branch" id="branch-garrison" class="c-radio branch-radio">
+        <input type="radio" name="rec-branch" id="branch-mp" class="c-radio branch-radio">
+        <input type="radio" name="rec-branch" id="branch-trainee" class="c-radio branch-radio">
+
+        <!-- Hair Style -->
+        <input type="radio" name="rec-hair" id="hair-crop" class="c-radio hair-radio" checked>
+        <input type="radio" name="rec-hair" id="hair-windswept" class="c-radio hair-radio">
+        <input type="radio" name="rec-hair" id="hair-ponytail" class="c-radio hair-radio">
+        <input type="radio" name="rec-hair" id="hair-spiky" class="c-radio hair-radio">
+
+        <!-- Hair Color -->
+        <input type="radio" name="rec-haircolor" id="color-raven" class="c-radio haircolor-radio" checked>
+        <input type="radio" name="rec-haircolor" id="color-blonde" class="c-radio haircolor-radio">
+        <input type="radio" name="rec-haircolor" id="color-auburn" class="c-radio haircolor-radio">
+        <input type="radio" name="rec-haircolor" id="color-silver" class="c-radio haircolor-radio">
+
+        <!-- Eye / Shifter Glow -->
+        <input type="radio" name="rec-eye" id="eye-green" class="c-radio eye-radio" checked>
+        <input type="radio" name="rec-eye" id="eye-amber" class="c-radio eye-radio">
+        <input type="radio" name="rec-eye" id="eye-grey" class="c-radio eye-radio">
+        <input type="radio" name="rec-eye" id="eye-crimson" class="c-radio eye-radio">
+
+        <!-- Combat Specialization Class -->
+        <input type="radio" name="rec-class" id="class-blademaster" class="c-radio class-radio" checked>
+        <input type="radio" name="rec-class" id="class-tactician" class="c-radio class-radio">
+        <input type="radio" name="rec-class" id="class-aerialace" class="c-radio class-radio">
+        <input type="radio" name="rec-class" id="class-demolition" class="c-radio class-radio">
+
+        <!-- Equipment Checkboxes -->
+        <input type="checkbox" id="gear-blades" class="c-check" checked>
+        <input type="checkbox" id="gear-spears" class="c-check" checked>
+        <input type="checkbox" id="gear-flare" class="c-check">
+        <input type="checkbox" id="gear-gas" class="c-check" checked>
+
+        <!-- Official Enlistment Stamp Trigger -->
+        <input type="checkbox" id="enlist-trigger" class="c-check enlist-check">
+
+        <!-- ============================================
+             LEFT COLUMN: CUSTOMIZATION FORM CONTROLS
+             ============================================ -->
+        <div class="creator-form-panel">
+          
+          <div class="form-section-group">
+            <h3 class="form-group-title"><span class="step-num">01</span> RECRUIT DOSSIER IDENTITY</h3>
+            <div class="form-inputs-row">
+              <div class="input-field">
+                <label for="recruit-name-input">RECRUIT SURNAME & GIVEN NAME</label>
+                <input type="text" id="recruit-name-input" placeholder="e.g. Roland Jaeger" value="Roland Vance" class="military-input">
+              </div>
+              <div class="input-field">
+                <label for="recruit-callsign-input">SQUAD CALLSIGN / EPITHET</label>
+                <input type="text" id="recruit-callsign-input" placeholder="e.g. Iron Raven" value="Skyward Talon" class="military-input">
+              </div>
+            </div>
+          </div>
+
+          <!-- 02. MILITARY REGIMENT BRANCH -->
+          <div class="form-section-group">
+            <h3 class="form-group-title"><span class="step-num">02</span> MILITARY REGIMENT BRANCH</h3>
+            <div class="choice-pills-grid">
+              <label for="branch-scout" class="choice-pill pill-branch pill-scout">
+                <span class="pill-badge">⚔</span>
+                <strong>SURVEY CORPS</strong>
+                <small>Wings of Freedom</small>
+              </label>
+
+              <label for="branch-garrison" class="choice-pill pill-branch pill-garrison">
+                <span class="pill-badge">🌹</span>
+                <strong>GARRISON REGIMENT</strong>
+                <small>Order of Two Roses</small>
+              </label>
+
+              <label for="branch-mp" class="choice-pill pill-branch pill-mp">
+                <span class="pill-badge">🦄</span>
+                <strong>MILITARY POLICE</strong>
+                <small>The Royal Unicorn</small>
+              </label>
+
+              <label for="branch-trainee" class="choice-pill pill-branch pill-trainee">
+                <span class="pill-badge">🛡</span>
+                <strong>CADET CORPS</strong>
+                <small>104th Trainee Unit</small>
+              </label>
+            </div>
+          </div>
+
+          <!-- 03. HAIR STYLE & HAIR COLOR -->
+          <div class="form-section-group">
+            <h3 class="form-group-title"><span class="step-num">03</span> ANIME HAIRSTYLE & COLOR</h3>
+            
+            <div class="sub-choice-label">HAIRSTYLE DESIGN</div>
+            <div class="choice-pills-grid">
+              <label for="hair-crop" class="choice-pill pill-hair">
+                <strong>SHORT UNDERCUT</strong>
+                <small>Levi Style</small>
+              </label>
+              <label for="hair-windswept" class="choice-pill pill-hair">
+                <strong>WINDSWEPT MANE</strong>
+                <small>Eren Style</small>
+              </label>
+              <label for="hair-ponytail" class="choice-pill pill-hair">
+                <strong>SCOUT PONYTAIL</strong>
+                <small>Hange Style</small>
+              </label>
+              <label for="hair-spiky" class="choice-pill pill-hair">
+                <strong>VANGUARD SPIKY</strong>
+                <small>Jean Style</small>
+              </label>
+            </div>
+
+            <div class="sub-choice-label">HAIR COLOR PALETTE</div>
+            <div class="color-swatch-grid">
+              <label for="color-raven" class="color-swatch-item swatch-raven">
+                <span class="swatch-circle"></span> Raven Black
+              </label>
+              <label for="color-blonde" class="color-swatch-item swatch-blonde">
+                <span class="swatch-circle"></span> Golden Blonde
+              </label>
+              <label for="color-auburn" class="color-swatch-item swatch-auburn">
+                <span class="swatch-circle"></span> Auburn Red
+              </label>
+              <label for="color-silver" class="color-swatch-item swatch-silver">
+                <span class="swatch-circle"></span> Silver White
+              </label>
+            </div>
+          </div>
+
+          <!-- 04. EYE GLOW / SHIFTER AURA -->
+          <div class="form-section-group">
+            <h3 class="form-group-title"><span class="step-num">04</span> OCULAR AURA & EYE COLOR</h3>
+            <div class="color-swatch-grid">
+              <label for="eye-green" class="color-swatch-item swatch-eye-green">
+                <span class="swatch-circle"></span> Titan Emerald
+              </label>
+              <label for="eye-amber" class="color-swatch-item swatch-eye-amber">
+                <span class="swatch-circle"></span> Shifter Amber
+              </label>
+              <label for="eye-grey" class="color-swatch-item swatch-eye-grey">
+                <span class="swatch-circle"></span> Steel Obsidian
+              </label>
+              <label for="eye-crimson" class="color-swatch-item swatch-eye-crimson">
+                <span class="swatch-circle"></span> Crimson Berserk
+              </label>
+            </div>
+          </div>
+
+          <!-- 05. COMBAT SPECIALIZATION CLASS -->
+          <div class="form-section-group">
+            <h3 class="form-group-title"><span class="step-num">05</span> COMBAT SPECIALIZATION CLASS</h3>
+            <div class="choice-pills-grid">
+              <label for="class-blademaster" class="choice-pill pill-class">
+                <strong>BLADE MASTER</strong>
+                <small>STR 96% | AGI 92% | STRAT 70%</small>
+              </label>
+              <label for="class-tactician" class="choice-pill pill-class">
+                <strong>FIELD TACTICIAN</strong>
+                <small>STR 60% | AGI 72% | STRAT 98%</small>
+              </label>
+              <label for="class-aerialace" class="choice-pill pill-class">
+                <strong>ODM AERIAL ACE</strong>
+                <small>STR 82% | AGI 99% | STRAT 85%</small>
+              </label>
+              <label for="class-demolition" class="choice-pill pill-class">
+                <strong>THUNDER GUNNER</strong>
+                <small>STR 98% | AGI 76% | STRAT 88%</small>
+              </label>
+            </div>
+          </div>
+
+          <!-- 06. TACTICAL EQUIPMENT LOADOUT -->
+          <div class="form-section-group">
+            <h3 class="form-group-title"><span class="step-num">06</span> TACTICAL EQUIPMENT LOADOUT</h3>
+            <div class="gear-checkboxes-grid">
+              <label for="gear-blades" class="gear-toggle-pill">
+                <span class="check-box-indicator">✔</span> Dual Ultrahard Blades
+              </label>
+              <label for="gear-spears" class="gear-toggle-pill">
+                <span class="check-box-indicator">✔</span> Thunder Spear Mounts
+              </label>
+              <label for="gear-flare" class="gear-toggle-pill">
+                <span class="check-box-indicator">✔</span> Flare Signal Dispatcher
+              </label>
+              <label for="gear-gas" class="gear-toggle-pill">
+                <span class="check-box-indicator">✔</span> Quad High-Pressure Gas
+              </label>
+            </div>
+          </div>
+
+          <!-- ENLISTMENT ACTION BUTTON -->
+          <div class="enlistment-action-wrap">
+            <label for="enlist-trigger" class="enlist-submit-btn">
+              <span class="enlist-idle">
+                <span class="enlist-seal-icon">🎖</span> OFFICIALLY ENLIST RECRUIT [SUBMIT]
+              </span>
+              <span class="enlist-active">
+                <span class="enlist-seal-icon">⭐</span> RECRUIT ENLISTED! [CLICK TO EDIT]
+              </span>
+            </label>
+            <span class="enlist-hint">Clicking applies the official Survey Corps validation stamp and military badge!</span>
+          </div>
+
+        </div>
+
+        <!-- ============================================
+             RIGHT COLUMN: REAL-TIME CHARACTER DOSSIER CARD PREVIEW
+             ============================================ -->
+        <div class="creator-preview-panel">
+          <div class="preview-sticky-wrap">
+            
+            <div class="preview-badge-header">
+              <span class="preview-tag">MILITARY DOSSIER // REAL-TIME PREVIEW</span>
+              <span class="preview-status">STATUS: STANDBY</span>
+            </div>
+
+            <!-- THE INTERACTIVE CHARACTER CARD (Cascaded by CSS) -->
+            <div class="rec-preview-card">
+              
+              <!-- Regiment Ribbon -->
+              <div class="preview-regiment-ribbon">
+                <span class="ribbon-scout">SURVEY CORPS // 調査兵団</span>
+                <span class="ribbon-garrison">GARRISON REGIMENT // 駐屯兵団</span>
+                <span class="ribbon-mp">MILITARY POLICE // 憲兵団</span>
+                <span class="ribbon-trainee">104TH CADET CORPS // 訓練兵団</span>
+              </div>
+
+              <!-- Animated Character Silhouette Avatar Box -->
+              <div class="preview-avatar-stage">
+                <div class="avatar-aura-glow"></div>
+                
+                <!-- Dynamic SVG Anime Avatar -->
+                <svg viewBox="0 0 140 140" class="rec-avatar-svg" aria-label="Recruit Anime Avatar">
+                  <!-- Head -->
+                  <circle cx="70" cy="48" r="22" class="rec-skin" />
+                  
+                  <!-- Hairstyle Variants (Shown selectively via CSS) -->
+                  <!-- 1. Levi Undercut Crop -->
+                  <path d="M46,38 Q70,22 94,38 Q90,58 82,64 Q70,60 58,64 Z" class="rec-hair-vector hair-crop-vector" />
+                  
+                  <!-- 2. Windswept Mane (Eren style) -->
+                  <path d="M42,32 Q70,16 98,32 Q102,68 90,74 Q70,64 50,74 Z" class="rec-hair-vector hair-windswept-vector" />
+                  
+                  <!-- 3. Scout Ponytail (Hange style) -->
+                  <g class="rec-hair-vector hair-ponytail-vector">
+                    <path d="M45,34 Q70,20 95,34 Q92,60 84,66 Q70,60 56,66 Z" />
+                    <path d="M92,45 Q115,48 118,72 Q108,74 95,58 Z" />
+                  </g>
+
+                  <!-- 4. Spiky Vanguard (Jean style) -->
+                  <path d="M44,36 L52,18 L64,28 L74,15 L84,28 L94,18 L96,36 Q92,58 84,65 Q70,60 56,65 Z" class="rec-hair-vector hair-spiky-vector" />
+
+                  <!-- Eyes with Dynamic Glow -->
+                  <circle cx="62" cy="48" r="3" class="rec-eye-dot rec-eye-left" />
+                  <circle cx="78" cy="48" r="3" class="rec-eye-dot rec-eye-right" />
+
+                  <!-- Torso & Military Cloak -->
+                  <path d="M40,78 Q70,72 100,78 L106,140 L34,140 Z" class="rec-torso" />
+                  <!-- Military Jacket Collar -->
+                  <polygon points="58,76 70,88 82,76 70,82" class="rec-collar" />
+                  <!-- Crest Emblem on Left Shoulder -->
+                  <polygon points="46,88 56,92 56,104 46,110 36,104 36,92" class="rec-crest-shield" />
+                </svg>
+
+                <!-- Dynamic Class Badge Flag -->
+                <div class="rec-class-flag">
+                  <span class="flag-bm">BLADE MASTER</span>
+                  <span class="flag-tac">FIELD TACTICIAN</span>
+                  <span class="flag-ace">ODM AERIAL ACE</span>
+                  <span class="flag-demo">THUNDER GUNNER</span>
+                </div>
+              </div>
+
+              <!-- Recruit Identity Readout -->
+              <div class="preview-meta-info">
+                <h4 class="preview-name-display">ROLAND VANCE</h4>
+                <span class="preview-epithet-display">“THE SKYWARD TALON”</span>
+                <span class="preview-division-code">EXPEDITIONARY UNIT: 4TH SPECIAL SQUADRON</span>
+              </div>
+
+              <!-- Real-Time Animated Stat Gauges -->
+              <div class="preview-stat-block">
+                <!-- Strength -->
+                <div class="p-gauge-row">
+                  <div class="p-gauge-head">
+                    <span class="p-label">STRENGTH</span>
+                    <span class="p-val val-str">96%</span>
+                  </div>
+                  <div class="p-track">
+                    <div class="p-fill p-fill-str"></div>
+                  </div>
+                </div>
+
+                <!-- Agility -->
+                <div class="p-gauge-row">
+                  <div class="p-gauge-head">
+                    <span class="p-label">AGILITY</span>
+                    <span class="p-val val-agi">92%</span>
+                  </div>
+                  <div class="p-track">
+                    <div class="p-fill p-fill-agi"></div>
+                  </div>
+                </div>
+
+                <!-- Strategy -->
+                <div class="p-gauge-row">
+                  <div class="p-gauge-head">
+                    <span class="p-label">STRATEGY</span>
+                    <span class="p-val val-strat">70%</span>
+                  </div>
+                  <div class="p-track">
+                    <div class="p-fill p-fill-strat"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dynamic Equipment Loadout Tags -->
+              <div class="preview-loadout-tags">
+                <span class="p-tag tag-blades">Dual Ultrahard Blades</span>
+                <span class="p-tag tag-spears">Thunder Spears</span>
+                <span class="p-tag tag-flare">Signal Flare Pistol</span>
+                <span class="p-tag tag-gas">High-Pressure Gas</span>
+              </div>
+
+              <!-- OFFICIAL MILITARY ENLISTMENT APPROVAL STAMP (Revealed on Enlist) -->
+              <div class="official-enlistment-seal">
+                <div class="seal-inner-circle">
+                  <span class="seal-kanji-big">入隊認可</span>
+                  <span class="seal-en-sub">OFFICIALLY ENLISTED</span>
+                  <span class="seal-code">CORPS ID #845-99</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MILITARY ARCHIVE & INTEL SECTION (Pure CSS Tabs)
+       ============================================================ -->
+  <section id="intel" class="intel-section">
+    <div class="section-container">
+      
+      <div class="section-title-wrap">
+        <div class="section-kanji-tag">兵団機密文書 // ARCHIVES</div>
+        <h2 class="section-heading">SURVEY CORPS ARCHIVES & INTEL</h2>
+        <div class="section-gold-line"></div>
+        <p class="section-subtitle">
+          Declassified technical documentation on humanity’s defensive barriers, weaponry, and tactical signaling.
+        </p>
+      </div>
+
+      <div class="intel-tabs-container">
+        <input type="radio" name="intel-tab" id="tab-odm" class="tab-radio" checked>
+        <input type="radio" name="intel-tab" id="tab-blades" class="tab-radio">
+        <input type="radio" name="intel-tab" id="tab-walls" class="tab-radio">
+        <input type="radio" name="intel-tab" id="tab-flares" class="tab-radio">
+
+        <div class="tab-navigation-bar">
+          <label for="tab-odm" class="tab-btn btn-odm"><span class="tab-num">01</span> ODM GEAR</label>
+          <label for="tab-blades" class="tab-btn btn-blades"><span class="tab-num">02</span> ULTRAHARD BLADES</label>
+          <label for="tab-walls" class="tab-btn btn-walls"><span class="tab-num">03</span> THE THREE WALLS</label>
+          <label for="tab-flares" class="tab-btn btn-flares"><span class="tab-num">04</span> FLARE DOCTRINE</label>
+        </div>
+
+        <div class="tab-content-area">
+          <!-- ODM -->
+          <div class="tab-pane pane-odm">
+            <div class="intel-split-view">
+              <div class="intel-details">
+                <span class="intel-badge">TECHNICAL SCHEMATIC // MK-IV</span>
+                <h3 class="intel-title">Omni-Directional Mobility (ODM) Gear</h3>
+                <p class="intel-lead">Humanity's paramount tactical breakthrough. A wearable apparatus granting full 3D spatial freedom through dual wire grapple anchors and gas jet propulsion.</p>
+                <ul class="intel-spec-list">
+                  <li><strong>Fan Turbine:</strong> High-revolution gas centrifuge driven by compressed air canisters.</li>
+                  <li><strong>Grappling Winch:</strong> High-tensile iron wire capable of pulling 300kg at 85 km/h.</li>
+                  <li><strong>Trigger Grips:</strong> Hand controls regulating wire brake, winch reel, and gas discharge.</li>
+                  <li><strong>Operational Ceiling:</strong> Forest canopies, urban districts, and cliff faces.</li>
+                </ul>
+              </div>
+              <div class="intel-visual-schematic">
+                <div class="schematic-diagram">
+                  <div class="schematic-circle"><span class="schematic-center-text">ODM TURBINE CORE</span></div>
+                  <div class="schematic-line line-1"></div><div class="schematic-line line-2"></div>
+                  <div class="schematic-tag tag-1">GAS CYLINDERS (x2)</div>
+                  <div class="schematic-tag tag-2">WIRE REEL DRUM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BLADES -->
+          <div class="tab-pane pane-blades">
+            <div class="intel-split-view">
+              <div class="intel-details">
+                <span class="intel-badge">BALLISTICS & METALLURGY</span>
+                <h3 class="intel-title">Snap-Off Ultrahard Steel Blades</h3>
+                <p class="intel-lead">Forged from ultra-dense blast furnace iron and organic bamboo ore found solely on the island. Flexible yet hard enough to slice through hardened Titan flesh.</p>
+                <ul class="intel-spec-list">
+                  <li><strong>Segmented Design:</strong> Segmented notches allow instant blade detachment upon dulling.</li>
+                  <li><strong>Side Sheath Scabbards:</strong> Carries 8 replacement blades per soldier alongside gas tanks.</li>
+                  <li><strong>Sharpness Threshold:</strong> Degrades rapidly upon striking bone or crystal; requires frequent replacement during prolonged engagements.</li>
+                </ul>
+              </div>
+              <div class="intel-visual-schematic">
+                <div class="blade-schematic-visual">
+                  <div class="blade-graphic">
+                    <div class="blade-segment"></div><div class="blade-segment"></div>
+                    <div class="blade-segment"></div><div class="blade-segment"></div><div class="blade-segment"></div>
+                  </div>
+                  <span class="blade-label">SEGMENTED SNAP-OFF INTERFACE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WALLS -->
+          <div class="tab-pane pane-walls">
+            <div class="intel-split-view">
+              <div class="intel-details">
+                <span class="intel-badge">DEFENSIVE TOPOGRAPHY</span>
+                <h3 class="intel-title">The Three Concentric Walls</h3>
+                <p class="intel-lead">Monolithic defensive ramparts spanning 50 meters in height, shielding the remnants of human civilization for over a century.</p>
+                <ul class="intel-spec-list">
+                  <li><strong>Wall Maria:</strong> Outer barrier (Radius: ~480 km). Breached in Year 845 by the Colossal and Armored Titans.</li>
+                  <li><strong>Wall Rose:</strong> Middle defense line (Radius: ~380 km). The front line of humanity's ongoing defensive war.</li>
+                  <li><strong>Wall Sina:</strong> Inner sanctuary (Radius: ~250 km). Seat of the royal capital and Military Police command.</li>
+                </ul>
+              </div>
+              <div class="intel-visual-schematic">
+                <div class="walls-cross-section">
+                  <div class="wall-circle circle-maria"><span class="c-tag">MARIA (50m)</span></div>
+                  <div class="wall-circle circle-rose"><span class="c-tag">ROSE (50m)</span></div>
+                  <div class="wall-circle circle-sina"><span class="c-tag">SINA (50m)</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FLARES -->
+          <div class="tab-pane pane-flares">
+            <div class="intel-split-view">
+              <div class="intel-details">
+                <span class="intel-badge">SIGNAL PROTOCOL // ERWIN FORMATION</span>
+                <h3 class="intel-title">Long-Distance Scouting Flare Doctrine</h3>
+                <p class="intel-lead">Visual communication network invented by Commander Erwin Smith to transmit reconnaissance telemetry across vast open plains beyond voice range.</p>
+                <ul class="intel-spec-list">
+                  <li><strong>🟢 Green Smoke:</strong> Change formation heading to avoid hostile contact.</li>
+                  <li><strong>🔴 Red Smoke:</strong> Standard Titan detected; alerts neighboring scout nodes.</li>
+                  <li><strong>⚫ Black Smoke:</strong> Abnormal Titan detected moving with irregular swiftness.</li>
+                  <li><strong>🟡 Yellow Smoke:</strong> Operation abort or mission target successfully secured.</li>
+                </ul>
+              </div>
+              <div class="intel-visual-schematic">
+                <div class="flares-visual-grid">
+                  <div class="flare-badge-item f-green">🟢 DIRECTION CHANGE</div>
+                  <div class="flare-badge-item f-red">🔴 TITAN SIGHTED</div>
+                  <div class="flare-badge-item f-black">⚫ ABNORMAL ALERT</div>
+                  <div class="flare-badge-item f-yellow">🟡 MISSION ABORT</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SURVEY CORPS FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-crest-wrap">
+        <svg viewBox="0 0 100 120" class="footer-crest-svg" aria-hidden="true">
+          <polygon points="50,5 92,20 92,75 50,115 8,75 8,20" class="shield-border" />
+          <polygon points="50,11 86,24 86,72 50,107 14,72 14,24" class="shield-bg" />
+          <path d="M50,22 Q38,28 26,40 Q22,55 30,68 Q38,62 44,52 Q40,66 48,78 Q42,85 50,92 Q48,78 50,65 Z" class="wing-white" />
+          <path d="M50,22 Q62,28 74,40 Q78,55 70,68 Q62,62 56,52 Q60,66 52,78 Q58,85 50,92 Q52,78 50,65 Z" class="wing-blue" />
+        </svg>
+      </div>
+
+      <div class="footer-motto-wrap">
+        <div class="footer-kanji">心臓を捧げよ！</div>
+        <div class="footer-en-motto">“DEDICATE YOUR HEARTS TO HUMANITY!”</div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer Quick Links">
+        <a href="#hero">WALL MARIA</a>
+        <a href="#mission">MISSION 01</a>
+        <a href="#characters">CHARACTERS</a>
+        <a href="#battle">TITAN COMBAT</a>
+        <a href="#creator">RECRUIT CREATOR</a>
+        <a href="#intel">MILITARY INTEL</a>
+      </nav>
+
+      <div class="footer-legal">
+        <span class="legal-stamp">SURVEY CORPS COMMAND // CLASSIFIED RECORD NO. 845-57</span>
+        <p class="legal-note">Attack on Titan anime prototype tribute. Built strictly with pure HTML5 and CSS3 (Zero JavaScript).</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
